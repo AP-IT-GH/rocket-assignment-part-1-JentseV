@@ -14,6 +14,9 @@ public class CameraFolower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = rocket.transform.position + new Vector3(0,0,-20);
+        if(rocket != null){
+            transform.position = rocket.transform.position + new Vector3(0,0,-20);
+        }
+        
     }
 }
