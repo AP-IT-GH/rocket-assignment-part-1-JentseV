@@ -9,6 +9,6 @@ public class ButtonLevelLoad : MonoBehaviour
     public string m_LevelToLoad;
 
     public void LoadLevel(){
-        SceneManager.LoadScene(m_LevelToLoad);
+        SceneManager.LoadScene("Level1");
     }
 }

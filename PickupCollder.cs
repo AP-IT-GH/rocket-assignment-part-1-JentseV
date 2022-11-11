@@ -22,9 +22,12 @@ public class PickupCollder : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         GameObject obstacle4 = GameObject.Find("Obstacle 4");
-        if(other.gameObject.tag == "rocket" && obstacle4 != null){
+        if(other.gameObject.tag == "rocket" && obstacle4 != null && this.name =="Coin"){
             Destroy(obstacle4);
-            Destroy(GameObject.Find("Coin"));
+            Destroy(GameObject.Find(this.name));
+            GameObject.Find("Rocket").GetComponent<Score>().AddPoint(1);
+        }else if( other.gameObject.tag == "rocket"){
+            Destroy(GameObject.Find(this.name));
             GameObject.Find("Rocket").GetComponent<Score>().AddPoint(1);
         }
     }
